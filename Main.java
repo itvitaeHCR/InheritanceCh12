@@ -43,6 +43,10 @@ class Shape {
     public void setLineColor(String lineColor) {
         this.lineColor = lineColor;
     }
+    public void draw() {
+        System.out.printf("My fill color is %s\n", getFillColor());
+        System.out.printf("My line color is %s\n", getLineColor());
+    }
 
 }
 
@@ -54,8 +58,7 @@ class Square extends Shape {
     public void draw() {
         System.out.println("I am drawing a square");
         System.out.printf("I have %d sides\n", sides);
-        System.out.printf("My fill color is %s\n", getFillColor());
-        System.out.printf("My line color is %s\n", getLineColor());
+        super.draw();
     }
 
     public int getSides() {
@@ -72,8 +75,7 @@ class Triangle extends Shape {
     public void draw() {
         System.out.println("I am drawing a triangle");
         System.out.printf("I have %d sides\n", sides);
-        System.out.printf("My fill color is %s\n", getFillColor());
-        System.out.printf("My line color is %s\n", getLineColor());
+        super.draw();
     }
 
     public int getSides() {
@@ -89,8 +91,7 @@ class Octagon extends Shape {
     public void draw() {
         System.out.println("I am drawing an octagon");
         System.out.printf("I have %d sides\n", sides);
-        System.out.printf("My fill color is %s\n", getFillColor());
-        System.out.printf("My line color is %s\n", getLineColor());
+        super.draw();
     }
 
     public int getSides() {
