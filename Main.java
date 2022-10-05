@@ -22,7 +22,7 @@ public class Main {
     }
 }
 
-class Shape {
+abstract class Shape {
     private String fillColor;
     private String lineColor;
 
@@ -43,7 +43,13 @@ class Shape {
     public void setLineColor(String lineColor) {
         this.lineColor = lineColor;
     }
+
+    public abstract int getSides();
+    public abstract String getType();
+
     public void draw() {
+        System.out.printf("I am drawing a %s\n", getType());
+        System.out.printf("I have %d sides\n", getSides());
         System.out.printf("My fill color is %s\n", getFillColor());
         System.out.printf("My line color is %s\n", getLineColor());
     }
@@ -55,14 +61,19 @@ class Square extends Shape {
 
     public Square() {}
 
-    public void draw() {
-        System.out.println("I am drawing a square");
-        System.out.printf("I have %d sides\n", sides);
-        super.draw();
-    }
+//    public void draw() {
+//        System.out.println("I am drawing a square");
+//        System.out.printf("I have %d sides\n", sides);
+//        super.draw();
+//    }
 
     public int getSides() {
         return sides;
+    }
+
+    @Override
+    public String getType() {
+        return "square";
     }
 
 } // ends class Square
@@ -72,15 +83,21 @@ class Triangle extends Shape {
 
     public Triangle() {}
 
-    public void draw() {
-        System.out.println("I am drawing a triangle");
-        System.out.printf("I have %d sides\n", sides);
-        super.draw();
-    }
+//    public void draw() {
+//        System.out.println("I am drawing a triangle");
+//        System.out.printf("I have %d sides\n", sides);
+//        super.draw();
+//    }
 
     public int getSides() {
         return sides;
     }
+
+    @Override
+    public String getType() {
+        return "triangle";
+    }
+
 } // ends class Triangle
 
 class Octagon extends Shape {
@@ -88,13 +105,19 @@ class Octagon extends Shape {
 
     public Octagon() {}
 
-    public void draw() {
-        System.out.println("I am drawing an octagon");
-        System.out.printf("I have %d sides\n", sides);
-        super.draw();
-    }
+//    public void draw() {
+//        System.out.println("I am drawing an octagon");
+//        System.out.printf("I have %d sides\n", sides);
+//        super.draw();
+//    }
 
     public int getSides() {
         return sides;
     }
+
+    @Override
+    public String getType() {
+        return "octagon";
+    }
+
 } // ends class Octagon
